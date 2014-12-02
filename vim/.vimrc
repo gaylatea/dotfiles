@@ -7,7 +7,9 @@ set hidden
 set laststatus=2
 set background=dark
 set number
-set clipboard=unnamed
+if $TMUX == ''
+  set clipboard+=unnamed
+endif
 set cursorline
 set virtualedit=onemore
 set viewoptions=folds,options,cursor,unix,slash

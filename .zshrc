@@ -8,4 +8,6 @@ workon adroll
 alias util="ssh ari@utility1.adroll.com"
 alias db-test-prepare='echo "drop database muscovado_test; create database muscovado_test;" | db && paster setup-app test.ini'
 
+export PATH=$PATH:~/src/github.com/SemanticSugar/smoove/bin
+export EDITOR="/opt/boxen/homebrew/bin/vim"
 export GOPATH=~
