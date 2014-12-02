@@ -1,0 +1,41 @@
+
+[hub]
+protocol = https
+
+[core]
+	editor = /opt/boxen/homebrew/bin/vim
+	excludesfile = /opt/boxen/config/git/gitignore
+
+[user]
+	name = Ari
+	email = a@silversupre.me
+
+[credential]
+helper = /opt/boxen/bin/boxen-git-credential
+
+[push]
+default = simple
+
+[alias]
+  co = checkout
+  st = status
+  aa = add --all
+  up = !git pull --rebase --prune $@ && git submodule update --init --recursive
+  nb = checkout -b
+  save = !git add -A && git commit -m 'SAVEPOINT'
+  wip = !git add -u && git commit -m "WIP"
+  undo = reset HEAD~1 --mixed
+  amend = commit -a --amend
+  wipe = !git add -A && git commit -qm 'WIPE SAVEPOINT' && git reset HEAD~1 --hard
+
+[difftool "sourcetree"]
+	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+	path = 
+[mergetool "sourcetree"]
+	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+	trustExitCode = true
+[github]
+	site = https://github.com
+	endpoint = https://api.github.com
+[reflow]
+	git-server = GitHub
