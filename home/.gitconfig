@@ -1,3 +1,6 @@
+[init]
+defaultBranch = main
+
 [user]
 name = Ari
 email = a@silversupre.me
@@ -21,3 +24,9 @@ pr = "!git push -u origin $(git branch-name)"
 
 [init]
 defaultBranch = main
+[gpg]
+	format = ssh
+[commit]
+	gpgsign = true
+[gpg "ssh"]
+	defaultKeyCommand = ssh-add -L
