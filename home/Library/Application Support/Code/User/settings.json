@@ -1,0 +1,12 @@
+{
+    "workbench.colorTheme": "Nord",
+    "editor.fontFamily": "Fantasque Sans Mono",
+    "editor.fontSize": 16,
+    "editor.fontLigatures": true,
+    "workbench.startupEditor": "none",
+    "editor.rulers": [
+        80, 120
+    ],
+    "workbench.editor.closeEmptyGroups": false,
+    "explorer.confirmDelete": false
+}
