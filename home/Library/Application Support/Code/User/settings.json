@@ -7,6 +7,20 @@
     "editor.rulers": [
         80, 120
     ],
+    "todohighlight.keywords": [
+        {
+            "text": "SAFETY",
+            "color": "#FFA500",
+            "backgroundColor": "#000000"
+        },
+        {
+            "text": "HACK",
+            "color": "#ffffff",
+            "backgroundColor": "#fa2301",
+        }
+    ],
+    "security.workspace.trust.untrustedFiles": "open",
     "workbench.editor.closeEmptyGroups": false,
+    "extensions.ignoreRecommendations": true,
     "explorer.confirmDelete": false
 }
