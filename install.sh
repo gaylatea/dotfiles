@@ -5,7 +5,7 @@ DOTFILES_DIR="${SRC_DIR}/dotfiles"
 
 # TODO: logging
 mkdir -p "${SRC_DIR}"
-git clone git@github.com:gaylatea/dotfiles.git "${DOTFILES_DIR}"
+git clone https://github.com/gaylatea/dotfiles.git "${DOTFILES_DIR}"
 
 cd "${DOTFILES_DIR}"
 
