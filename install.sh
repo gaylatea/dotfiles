@@ -1,6 +1,6 @@
 #!/bin/bash
 # Install my dotfiles and install other needed tools.
-SRC_DIR="~/src"
+SRC_DIR="${HOME}/src"
 DOTFILES_DIR="${SRC_DIR}/dotfiles"
 
 # TODO: logging
@@ -9,8 +9,15 @@ git clone https://github.com/gaylatea/dotfiles.git "${DOTFILES_DIR}"
 
 cd "${DOTFILES_DIR}"
 
-# TODO: homebrew install
-# TODO: oh-my-zsh install
-# TODO: brew bundle
+if [[ ! -x "$(which brew)" ]]; then
+    /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+fi
+
+if [[ ! -d "$HOME/.oh-my-zsh" ]]; then
+    sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+fi
+
+brew bundle
+
 # TODO: symlink all the files
 # TODO: decrypt files with age
