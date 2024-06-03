@@ -50,7 +50,10 @@ cursor = "#d8dee9"
 text = "#2e3440"
 
 [font]
-size = 18.0
+size = 14.0
 
 [font.normal]
 family = "Fantasque Sans Mono"
+
+[selection]
+save_to_clipboard=true

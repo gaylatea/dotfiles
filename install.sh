@@ -39,6 +39,11 @@ else
     log "Checking out dotfiles..."
     mkdir -p "${SRC_DIR}"
     git clone https://github.com/gaylatea/dotfiles.git "${DOTFILES_DIR}"
+    cd "${DOTFILES_DIR}"
+
+    # Switch the origin to be non-anonymous.
+    git remote rm origin
+    git remote add origin git@github.com:gaylatea/dotfiles.git
 fi
 
 if [[ ! -x "$(which brew)" ]]; then
@@ -55,11 +60,17 @@ log "Installing system software..."
 cd "${DOTFILES_DIR}"
 brew bundle
 
-# TODO: decrypt files with age
+log "Unlocking age key..."
+mkdir -p "${PWD}/decrypted"
+age --decrypt -o "${PWD}/decrypted/gaylatea.key" "${PWD}/encrypted/gaylatea.key.encrypted"
+safe_link "${PWD}/decrypted/gaylatea.key" "${HOME}/gaylatea.key"
+log_success "Files in this repo can now be decrypted!"
 
 log "Symlinking config files to this repo..."
 safe_link "${PWD}/home/.zshrc" "${HOME}/.zshrc"
 safe_link "${PWD}/home/.zshrc.d" "${HOME}/.zshrc.d"
+
+safe_link "${PWD}/home/bin" "${HOME}/bin"
 
 safe_link "${PWD}/home/.gitconfig" "${HOME}/.gitconfig"
 safe_link "${PWD}/home/.alacritty.toml" "${HOME}/.alacritty.toml"
