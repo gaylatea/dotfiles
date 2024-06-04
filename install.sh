@@ -78,3 +78,6 @@ safe_link "${PWD}/home/.psqlrc" "${HOME}/.psqlrc"
 safe_link "${PWD}/home/.tmux.conf" "${HOME}/.tmux.conf"
 safe_link "${PWD}/home/Library/Application Support/Code/User/settings.json" \
           "${HOME}/Library/Application Support/Code/User/settings.json"
+
+log "Applying macOS-specific settings..."
+./mac.sh
