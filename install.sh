@@ -30,6 +30,7 @@ safe_link() {
         fi
     fi
 
+    echo "Linking ${1} -> ${2}"
     ln -s "$1" "$2"
 }
 
@@ -78,6 +79,10 @@ safe_link "${PWD}/home/.psqlrc" "${HOME}/.psqlrc"
 safe_link "${PWD}/home/.tmux.conf" "${HOME}/.tmux.conf"
 safe_link "${PWD}/home/Library/Application Support/Code/User/settings.json" \
           "${HOME}/Library/Application Support/Code/User/settings.json"
+
+log "Decrypting files..."
+age --decrypt -i "${HOME}/gaylatea.key" -o "${PWD}/decrypted/.npmrc" "${PWD}/encrypted/.npmrc.encrypted"
+safe_link "${PWD}/decrypted/.npmrc" "${HOME}/.npmrc"
 
 log "Applying macOS-specific settings..."
 ./mac.sh
