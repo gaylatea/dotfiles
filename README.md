@@ -1,4 +1,4 @@
-![](./cover.png)
+![Header](./cover.svg)
 
 ## Installation
 
