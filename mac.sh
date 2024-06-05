@@ -314,7 +314,7 @@ defaults write com.apple.dock show-recents -bool false
 defaults write com.apple.dock wvous-tl-corner -int 4
 defaults write com.apple.dock wvous-tl-modifier -int 0
 # Bottom left screen corner → Lock Screen
-defaults write com.apple.dock wvous-bl-corner -int 10
+defaults write com.apple.dock wvous-bl-corner -int 13
 defaults write com.apple.dock wvous-bl-modifier -int 0
 
 ###############################################################################
